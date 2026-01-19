@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('auth.login');
@@ -35,3 +37,5 @@ Route::get('/test', function () {
 Route::fallback(function () {
     return view('404');
 });
+
+Route::resource('pegawai', PegawaiController::class);

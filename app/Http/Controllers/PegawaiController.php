@@ -88,4 +88,10 @@ class PegawaiController extends Controller
         $pegawai->update($request->all());
         return redirect()->route('pegawai.index');
     }
+
+    public function destroy(String $id) 
+    {
+        Pegawai::destroy($id);
+        return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil dihapus');
+    }
 }
